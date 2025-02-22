@@ -69,6 +69,8 @@
   transform-origin: 50% calc(100% - 1px);
   z-index: 105;
 }
+.ets_mm_megamenu_content_content .mm_menus_li.mm_has_sub.active::before,
+.ets_mm_megamenu_content_content .mm_menus_li.mm_has_sub.active::after,
 .ets_mm_megamenu_content_content .mm_menus_li.mm_has_sub:hover::before,
 .ets_mm_megamenu_content_content .mm_menus_li.mm_has_sub:hover::after {
     background-color: #c64630;
