@@ -41,7 +41,7 @@
     {assign var="isCurrentPage" value=false}
 
     {foreach from=$menus item='menu'}
-        {if strpos($menu.menu_link, $currentPage)}
+        {if strpos($menu.menu_link, $currentPage) || $currentPage == ''}
             {assign var="isCurrentPage" value=true}
             {break}
         {/if}
@@ -57,14 +57,14 @@
         {/foreach}
     {/if}
 
-    {foreach from=$menus item='menu'}       
+    {foreach from=$menus item='menu'}
         <li class="mm_menus_li{if $menu.enabled_vertical} mm_menus_li_tab{if $menu.menu_ver_hidden_border} mm_no_border{/if}
 {if $menu.menu_ver_alway_show} menu_ver_alway_show_sub{/if}{/if}{if $menu.custom_class} {$menu.custom_class|escape:'html':'UTF-8'}{/if}
 {if $menu.sub_menu_type} mm_sub_align_{strtolower($menu.sub_menu_type)|escape:'html':'UTF-8'}{/if}
 {if isset($menu.enabled_vertical) && $menu.enabled_vertical && isset($menu.tabs) && $menu.tabs || $menu.columns} mm_has_sub{/if}
 {if isset($menu.display_tabs_in_full_width) && $menu.display_tabs_in_full_width && isset($menu.enabled_vertical) && $menu.enabled_vertical} display_tabs_in_full_width{/if}
 {if $menu.display_tabs_in_full_width && $menu.enabled_vertical} display_tabs_in_full_width{/if}
-{if strpos($menu.menu_link, $currentPage)} active{/if}
+{if strpos($menu.menu_link, $currentPage) || $menu.menu_link == '/' && $currentPage == ''} active{/if}
 {if isset($mm_config.ETS_MM_DISPLAY_SUBMENU_BY_CLICK) && $mm_config.ETS_MM_DISPLAY_SUBMENU_BY_CLICK } click_open_submenu{else} hover {/if}"
             {if $menu.enabled_vertical}style="width: {if $menu.menu_item_width}{$menu.menu_item_width|escape:'html':'UTF-8'}{else}{*230px*}auto;{/if}"{/if}>
             <a class="ets_mm_url" {if isset($menu.menu_open_new_tab) && $menu.menu_open_new_tab == 1} target="_blank"{/if}
