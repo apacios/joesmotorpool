@@ -1,3 +1,104 @@
-#ap_homeimages img {
-    max-width: 100%;
+#ap_homeimages .grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* La colonne principale est deux fois plus large */
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+#ap_homeimages .grid-item {
+    position: relative;
+    overflow: hidden;
+}
+
+#ap_homeimages .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+#ap_homeimages .grid-item a:hover img {
+    transform: scale(1.1);
+    filter: brightness(70%);
+}
+
+#ap_homeimages .grid-column {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+#ap_homeimages .overlay {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1em;
+}
+#ap_homeimages .overlay::before,
+#ap_homeimages .overlay::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: white;
+    opacity: 0;
+}
+
+#ap_homeimages .overlay::before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    transition: width 0.2s ease-in, height 0.2s ease-in 0.2s;
+}
+
+#ap_homeimages .overlay::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    transition: width 0.2s ease-in 0.4s, height 0.2s ease-in 0.6s, opacity 1ms linear .125s;
+    opacity: 0; /* Hidden initially */
+}
+
+#ap_homeimages .grid-item a:hover .overlay::before {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+#ap_homeimages .grid-item a:hover .overlay::after {
+    width: 100%;
+    height: 100%;
+    opacity: 1; 
+    transition-delay: 0.4s, 0.6s; 
+}
+
+#ap_homeimages .grid-item a:hover .overlay {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#ap_homeimages .grid-item a:not(:hover) .overlay::before,
+#ap_homeimages .grid-item a:not(:hover) .overlay::after {
+    width: 0;
+    height: 0;
+    transition: none;
+}
+
+@media (max-width: 768px) {
+    #ap_homeimages .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        height: auto;
+    }
+
+    #ap_homeimages .grid-column {
+        grid-template-rows: auto;
+    }
 }
