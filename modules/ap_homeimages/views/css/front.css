@@ -35,7 +35,7 @@
     color: white;
     font-size: 18px;
     font-weight: bold;
-    padding: 1em;
+    padding: 1em 1.5em;
 }
 #ap_homeimages .main .overlay {
     left: 50%;
@@ -58,7 +58,6 @@
     border-right: 2px solid white;
     transition: width .125s linear,height .125s linear .125s;
 }
-
 #ap_homeimages .overlay::after {
     bottom: 0;
     right: 0;
@@ -99,14 +98,8 @@
         grid-template-rows: auto;
     }
     #ap_homeimages .overlay {
-        position: absolute;
-        bottom: 1em;
         left: 50%;
         transform: translateX(-50%);
         font-size: 22px;
-        color: white;
-        font-size: 18px;
-        font-weight: bold;
-        padding: 1em;
     }
 }
