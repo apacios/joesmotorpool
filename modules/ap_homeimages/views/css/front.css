@@ -1,7 +1,6 @@
 #ap_homeimages {
     margin-bottom: 2em;
 }
-
 #ap_homeimages .grid-container {
     display: grid;
     grid-template-columns: 2fr 1fr; /* La colonne principale est deux fois plus large */
@@ -10,30 +9,25 @@
     height: 100%;
     padding: 10px;
 }
-
 #ap_homeimages .grid-item {
     position: relative;
     overflow: hidden;
 }
-
 #ap_homeimages .grid-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.8s ease, filter 0.8s ease;
 }
-
 #ap_homeimages .grid-item a:hover img {
     transform: scale(1.10);
     filter: brightness(60%);
 }
-
 #ap_homeimages .grid-column {
     display: grid;
     grid-template-rows: 1fr 1fr;
     gap: 10px;
 }
-
 #ap_homeimages .overlay {
     position: absolute;
     bottom: 1em;
@@ -57,7 +51,6 @@
     border-color: white;
     opacity: 0;
 }
-
 #ap_homeimages .overlay::before {
     top: 0;
     left: 0;
@@ -80,25 +73,21 @@
     height: 100%;
     opacity: 1;
 }
-
 #ap_homeimages .grid-item a:hover .overlay::after {
     width: 100%;
     height: 100%;
     opacity: 1; 
     transition-delay: 0.2s, 0.35s; 
 }
-
 #ap_homeimages .grid-item a:hover .overlay {
     opacity: 1;
 }
-
 #ap_homeimages .grid-item a:not(:hover) .overlay::before,
 #ap_homeimages .grid-item a:not(:hover) .overlay::after {
     width: 0;
     height: 0;
     transition: none;
 }
-
 @media (max-width: 768px) {
     #ap_homeimages .grid-container {
         grid-template-columns: 1fr;
@@ -108,5 +97,16 @@
 
     #ap_homeimages .grid-column {
         grid-template-rows: auto;
+    }
+    #ap_homeimages .overlay {
+        position: absolute;
+        bottom: 1em;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 22px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 1em;
     }
 }
