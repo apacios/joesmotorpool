@@ -148,5 +148,10 @@
 }
 
 #search_filters .facet .facet-label a {
-    font-size: 12px !important;
+    font-size: 13px;
+    vertical-align: top;
+    white-space: initial;
+}
+#search_filters .facet .facet-label .custom-checkbox, #search_filters .facet .facet-label .custom-radio {
+    top: 6px !important;
 }
