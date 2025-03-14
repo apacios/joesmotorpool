@@ -15,14 +15,14 @@
     min-height:auto;
 }
 
-#subcategories ul li 
+#subcategories ul li
 {
     min-width:auto;
 }
 
 @media(max-width:991px)
 {
-    #subcategories ul li 
+    #subcategories ul li
     {
     min-width:200px;
     }
@@ -145,4 +145,8 @@
 
 .ets_mm_megamenu_content .mm_blocks_li ul li.has-sub::after {
   transform: rotate(-45deg);
+}
+
+#search_filters .facet .facet-label a {
+    font-size: 12px !important;
 }
